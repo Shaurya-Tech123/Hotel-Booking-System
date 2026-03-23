@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luxury Stay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body data-booking-api-url="http://localhost:3000/api/bookings">
+
+<header class="navbar">
+    <div class="logo">Graphic Era Hotels</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#booking" class="nav-button">Book your Room</a></li>
+            <li><a href="#my-bookings" class="nav-button">My Bookings</a></li>
+            <li><a href="#admin-bookings" class="nav-button admin-link" aria-hidden="true" style="display:none;">Admin</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+        <h1>Redefining Luxury & Comfort</h1>
+        <p>Where elegance meets tranquility.</p>
+        <a href="#booking" class="hero-btn">Book Your Room</a>
+    </div>
+</section>
+
+<section id="booking" class="booking">
+    <h2>Plan Your Stay</h2>
+    <form id="bookingForm">
+        <div class="form-group">
+            <label>Check-In</label>
+            <input type="datetime-local" id="checkin" required>
+        </div>
+        <div class="form-group">
+            <label>Check-Out</label>
+            <input type="datetime-local" id="checkout" required>
+        </div>
+        <div class="form-group">
+            <label>Guests</label>
+            <input type="number" id="guests" min="1" required>
+        </div>
+        <div class="form-group">
+            <label>Room Type</label>
+            <select id="roomType" required>
+                <option value="">Select</option>
+                <option value="Single Suite">Single Suite</option>
+                <option value="Executive Room">Executive Room</option>
+                <option value="Presidential Suite">Presidential Suite</option>
+            </select>
+        </div>
+
+        <div class="form-group feature-selection">
+            <label>Optional Features (add-ons)</label>
+            <div class="feature-checkbox-grid">
+                <label class="feature-item">
+                    <input type="checkbox" class="booking-feature" value="Breakfast">
+                    Breakfast - ₹1200
+                </label>
+                <label class="feature-item">
+                    <input type="checkbox" class="booking-feature" value="Dinner">
+                    Dinner - ₹500
+                </label>
+                <label class="feature-item">
+                    <input type="checkbox" class="booking-feature" value="TV">
+                    TV - ₹1300
+                </label>
+                <label class="feature-item">
+                    <input type="checkbox" class="booking-feature" value="AC">
+                    AC - ₹1000
+                </label>
+            </div>
+            <p id="featuresCostText" class="features-cost-text">Features cost: ₹0</p>
+        </div>
+
+        <button type="submit" class="reserve-btn">Confirm Booking</button>
+    </form>
+    <div id="bookingMessage" class="booking-message" aria-live="polite"></div>
+</section>
+
+<section id="rooms" class="rooms">
+    <h2>Signature Rooms</h2>
+    <div class="room-grid">
+        <div class="room-card">
+            <img src="first.avif" alt="Suite">
+            <div class="room-info">
+                <h3>Single Suite</h3>
+                <p>₹2800 / night</p>
+                <p>Modern comfort with serene ambiance.</p>
+                <p class="room-rating" data-room="Single Suite">Loading rating...</p>
+                <button type="button" class="view-details" data-room="Single Suite">View Details</button>
+                <button type="button" class="view-reviews" data-room="Single Suite">View Reviews</button>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <img src="second.avif" alt="Executive">
+            <div class="room-info">
+                <h3>Executive Room</h3>
+                <p>₹4200 / night</p>
+                <p>Spacious luxury designed for business & leisure.</p>
+                <p class="room-rating" data-room="Executive Room">Loading rating...</p>
+                <button type="button" class="view-details" data-room="Executive Room">View Details</button>
+                <button type="button" class="view-reviews" data-room="Executive Room">View Reviews</button>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <img src="third.avif" alt="Presidential">
+            <div class="room-info">
+                <h3>Presidential Suite</h3>
+                <p>₹7500 / night</p>
+                <p>Premium elegance with exclusive services.</p>
+                <p class="room-rating" data-room="Presidential Suite">Loading rating...</p>
+                <button type="button" class="view-details" data-room="Presidential Suite">View Details</button>
+                <button type="button" class="view-reviews" data-room="Presidential Suite">View Reviews</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="experience">
+    <h2>The Luxury Experience</h2>
+    <p>At LuxuryStay, we focus on making your stay comfortable and relaxing. From delicious food and peaceful spa treatments to clean, beautiful rooms and friendly service, everything is designed to make you feel special. We want every guest to leave with happy memories and a smile.</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: chaicoder11@gmail.com</p>
+    <p>Phone: +91 7668233454</p>
+</section>
+
+<section id="my-bookings" class="contact">
+    <h2>My Bookings</h2>
+    <p>View your recent reservations on this device.</p>
+    <div class="booking-actions">
+        <button type="button" id="refreshMyBookings" class="secondary-btn">Refresh</button>
+        <button type="button" id="clearMyBookings" class="secondary-btn danger">Clear</button>
+    </div>
+    <div id="myBookingsList" class="bookings-list" aria-live="polite"></div>
+</section>
+
+<section id="admin-bookings" class="contact admin-only" hidden>
+    <h2>Admin - All Bookings</h2>
+    <p>Read-only view of bookings stored on the server. Enable with <code>?admin=1</code>.</p>
+    <div id="adminAuthWrap" class="admin-auth-wrap" style="display:none;">
+        <h3>Admin Login</h3>
+        <div class="form-group">
+            <label>Admin Email</label>
+            <input type="email" id="adminEmail" autocomplete="username">
+        </div>
+        <div class="form-group">
+            <label>Admin Password</label>
+            <input type="password" id="adminPassword" autocomplete="current-password">
+        </div>
+        <div class="booking-actions">
+            <button type="button" id="adminLoginButton" class="secondary-btn">Login</button>
+        </div>
+        <div id="adminAuthMessage" class="bookings-empty" aria-live="polite" style="display:none;"></div>
+    </div>
+    <div class="booking-actions">
+        <button type="button" id="loadAdminBookings" class="secondary-btn">Load from Server</button>
+    </div>
+    <div id="adminBookingsList" class="bookings-list" aria-live="polite"></div>
+</section>
+
+<footer>
+    <p>© 2026 Graphic Era Hotels. Crafted by Chaii Coders.</p>
+</footer>
+
+<div id="detailsModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+        <button type="button" class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-body">
+            <img id="detailsImage" src="" alt="">
+            <div class="modal-info">
+                <h3 id="detailsTitle"></h3>
+                <p id="detailsPrice" class="modal-price"></p>
+                <p id="detailsDescription"></p>
+                <ul id="detailsFeatures" class="modal-features"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="reviewsModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="reviewsTitle">
+        <button type="button" class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-body" style="align-items: stretch;">
+            <div class="modal-info">
+                <h3 id="reviewsTitle"></h3>
+                <p id="reviewsSummary" class="modal-price"></p>
+                <ul id="reviewsList" class="reviews-list"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
