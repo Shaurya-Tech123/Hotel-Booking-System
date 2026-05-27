@@ -493,3 +493,7 @@ footer {
         grid-column: span 1;
     }
 }
+.reserve-btn{
+    height: 50px;
+    width: 300px;
+}

@@ -1,2 +1,69 @@
-[]
-
+[
+  {
+    "id": "1775124213322-abd6ff7b08ffb",
+    "createdAt": "2026-04-02T10:03:33.322Z",
+    "user_id": "0e464c1b-8809-4f5d-ac4d-cb7eb2b1bcbd",
+    "checkin": "2026-04-03T15:34",
+    "checkout": "2026-04-17T15:33",
+    "guests": 3,
+    "roomType": "Executive Room",
+    "nights": 14,
+    "features": [
+      "Breakfast",
+      "TV"
+    ],
+    "featuresCost": 2500,
+    "roomTotalPrice": 58800,
+    "totalAmount": 61300,
+    "totalPrice": 58800
+  },
+  {
+    "id": "1775123336028-680b0e8a52762",
+    "createdAt": "2026-04-02T09:48:56.028Z",
+    "user_id": "0e464c1b-8809-4f5d-ac4d-cb7eb2b1bcbd",
+    "checkin": "2026-04-16T15:18",
+    "checkout": "2026-05-02T15:18",
+    "guests": 1,
+    "roomType": "Single Suite",
+    "nights": 16,
+    "features": [],
+    "featuresCost": 0,
+    "roomTotalPrice": 44800,
+    "totalAmount": 44800,
+    "totalPrice": 44800
+  },
+  {
+    "id": "1775122775324-b5b7ccc4d3567",
+    "createdAt": "2026-04-02T09:39:35.324Z",
+    "user_id": "0e464c1b-8809-4f5d-ac4d-cb7eb2b1bcbd",
+    "checkin": "2026-04-16T15:09",
+    "checkout": "2026-05-01T15:09",
+    "guests": 2,
+    "roomType": "Executive Room",
+    "nights": 15,
+    "features": [
+      "Dinner"
+    ],
+    "featuresCost": 500,
+    "roomTotalPrice": 63000,
+    "totalAmount": 63500,
+    "totalPrice": 63000
+  },
+  {
+    "id": "1775113173921-0e47524167812",
+    "createdAt": "2026-04-02T06:59:33.921Z",
+    "user_id": "0e464c1b-8809-4f5d-ac4d-cb7eb2b1bcbd",
+    "checkin": "2026-04-18T00:29",
+    "checkout": "2026-04-24T12:29",
+    "guests": 1,
+    "roomType": "Executive Room",
+    "nights": 7,
+    "features": [
+      "Breakfast"
+    ],
+    "featuresCost": 1200,
+    "roomTotalPrice": 29400,
+    "totalAmount": 30600,
+    "totalPrice": 29400
+  }
+]

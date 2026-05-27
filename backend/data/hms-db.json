@@ -1,0 +1,28 @@
+{
+  "users": [],
+  "refreshTokens": [],
+  "rooms": [
+    {
+      "roomType": "Single Suite",
+      "basePrice": 2800,
+      "capacity": 10
+    },
+    {
+      "roomType": "Executive Room",
+      "basePrice": 4200,
+      "capacity": 8
+    },
+    {
+      "roomType": "Presidential Suite",
+      "basePrice": 7500,
+      "capacity": 5
+    }
+  ],
+  "bookings": [],
+  "reviews": [],
+  "notifications": [],
+  "serviceRequests": [],
+  "maintenanceTickets": [],
+  "loyaltyLedger": [],
+  "auditLogs": []
+}
